@@ -4,5 +4,6 @@ namespace Entities{
         public string? tittle = null;
         public string? description = null;
         public DateTime? timeStamp = DateTime.Now;
+        public IEnumerable<object>? dataList =null;
     }
 }
