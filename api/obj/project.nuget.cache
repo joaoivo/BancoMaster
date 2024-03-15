@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BWwqBWiN8aYQHdn1rGY+Ucw47TFq24ZKDifojzma1kC19XHu1JZ69lh2QZMIeuYXSqTte0MUpo1ckirUXRdjNg==",
+  "dgSpecHash": "YPBEzvT87naGidtX7If4JU8pDkO3/niHjYoF544tG0W0PGuoiIJf+tBakx6JHUj63SluC1CFye136nhNX8qmQg==",
   "success": true,
   "projectFilePath": "D:\\Proj\\96-Public\\Tests\\c#\\202403BancoMaster\\api\\api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\joao.ivo\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\joao.ivo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\joao.ivo\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\joao.ivo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

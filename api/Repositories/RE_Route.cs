@@ -23,5 +23,13 @@ namespace Repositories{
             //route_lst.Add(route);// comando de update
             return new EN_Return{code=0, tittle="sucesso", description="Rota Excluída com sucesso"};
         }
+        public static EN_Return Search(IConfiguration config,string? guid=null,string? origin=null,string? destiny=null,decimal? value=null){
+            if(guid == null){
+                return new EN_Return{code=1, tittle="Inválida", description="Rota não Alterada por dados inválidos"};
+            }
+            
+            route_lst = RE_Route.Search(config,guid,origin,destiny,value);// comando de update
+            return new EN_Return{code=0, tittle="sucesso", description="Rota Excluída com sucesso"};
+        }
     }
 }
