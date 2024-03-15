@@ -1,0 +1,18 @@
+USE BancoMaster
+GO
+CREATE OR ALTER PROCEDURE pr_routes_del
+	@guid uniqueidentifier = null
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRY
+		BEGIN TRANSACTION;
+			DELETE [BancoMaster].[dbo].[tbRoutes]
+				WHERE	[rtsGuid] = @guid
+		COMMIT TRANSACTION;
+	END TRY
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+		THROW;
+	END CATCH;
+END;
