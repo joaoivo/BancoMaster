@@ -24,16 +24,28 @@ IResult returnResults(EN_Return result_en, string operation=""){
 app.MapGet("/", () => "Bem vindos ao Teste Banco Master utilize a interface para acessar os conteúdos");
 app.MapGet("/routes", () => "mapas das rotas disponiveis");
 app.MapGet("/routes/order/{origin}/{destiny}", ([FromRoute] string origin, [FromRoute] string destiny) => "mapas das rotas de "+origin +" à "+destiny);
+
+//routes
+app.MapGet("/routes/Advanced/", ([FromQuery] Guid? guid,[FromQuery] string? origin, [FromQuery] string? destiny, [FromQuery] decimal? value) =>{
+// "Consultar rotas Pelos parametros "+origin +" à "+destiny
+	try{
+		return returnResults( RE_Route.Search(builder.Configuration, guid, origin,destiny,value));
+	}catch(Exception ex){
+		return returnResults( new EN_Return{code=99, tittle="Erro de Runtime", description="Comando não executado: "+ex.Message + " em \n " +ex.StackTrace});
+	}
+});
+app.MapGet("/routes/id/{guid}", ([FromRoute] string guid) => "Adicionar rotas de "+guid );
+
 //add
-app.MapPut("/routes/{origin}/{destiny}/{price}", ([FromRoute] string origin, [FromRoute] string destiny, [FromRoute] decimal price) => {
+app.MapPost("/routes/{origin}/{destiny}/{price}", ([FromRoute] string origin, [FromRoute] string destiny, [FromRoute] decimal price) => {
 	try {
-		return returnResults( RE_Route.Add(new EN_Route { rtsOrigin = origin, rtsDestintion = destiny, rtsPrice = price }));
+		return returnResults( RE_Route.Add(builder.Configuration,new EN_Route { rtsOrigin = origin, rtsDestintion = destiny, rtsPrice = price }));
 	} catch (Exception ex) {
-		return returnResults( new EN_Return { code = 99, tittle = "Erro de Runtime", description = "Comando não executado: " + ex.Message });
+		return returnResults( new EN_Return { code = 99, tittle = "Erro de Runtime", description = "Comando não executado: " + ex.Message + " em \n " +ex.StackTrace});
 	}
 });
 //alter
-app.MapPost("/routes/alter/{guid}/{origin}/{destiny}/{value}", ([FromRoute] Guid guid,[FromRoute] string origin, [FromRoute] string destiny, [FromRoute] decimal value) => {
+app.MapPut("/routes/alter/{guid}/{origin}/{destiny}/{value}", ([FromRoute] Guid guid,[FromRoute] string origin, [FromRoute] string destiny, [FromRoute] decimal value) => {
 	//"Adicionar rotas de "+origin +" à "+destiny
 	try{
 		return returnResults( RE_Route.Alter(new EN_Route{rtsGuid =guid ,rtsOrigin=origin, rtsDestintion=destiny, rtsPrice=value}));
@@ -50,17 +62,6 @@ app.MapDelete("/routes/delete/{guid}", ([FromRoute] Guid guid) => {
 		return returnResults( new EN_Return{code=99, tittle="Erro de Runtime", description="Comando não executado: "+ex.Message});
 	}
 } );
-app.MapGet("/routes/search", ([FromQuery] Guid? guid,[FromQuery] string? origin, [FromQuery] string? destiny, [FromQuery] decimal? value) =>{
-// "Consultar rotas Pelos parametros "+origin +" à "+destiny
-	try{
-		return returnResults( RE_Route.Search(builder.Configuration, guid, origin,destiny,value));
-	}catch(Exception ex){
-		return returnResults( new EN_Return{code=99, tittle="Erro de Runtime", description="Comando não executado: "+ex.Message + " em \n " +ex.StackTrace});
-	}
-}
-);
-app.MapGet("/routes/search2", ([FromQuery] string? guid,[FromQuery] string? origin, [FromQuery] string? destiny, [FromQuery] decimal? value) =>"oie");
-//app.MapGet("/routes/{guid}", ([FromRoute] string guid) => "Adicionar rotas de "+guid );
 
 app.Run();
 

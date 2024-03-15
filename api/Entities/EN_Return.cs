@@ -1,5 +1,6 @@
 namespace Entities{
     public class EN_Return{
+        public Guid? id = null;
         public int? code = null;
         public string? tittle = null;
         public string? description = null;
