@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Repositories;
 using Entities;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["Database:Default"]);
@@ -17,8 +18,7 @@ IResult returnResults(EN_Return result_en, string operation=""){
 	}else if(result_en.code==0){
 		JsonSerializerOptions jsonOptions =new JsonSerializerOptions { WriteIndented = true, IgnoreReadOnlyFields =true, AllowTrailingCommas =false };
 		string data = JsonSerializer.Serialize<EN_Return>(result_en,jsonOptions);
-		data = data.Replace("\"","'").Replace("\r\n","");
-		return Results.Ok(data);
+		return Results.Ok(JsonObject.Parse(data));
 	}else{
 		return Results.NotFound("fugiu");
 	}
@@ -32,6 +32,7 @@ app.MapGet("/routes", () => {
 		return returnResults( new EN_Return{code=99, tittle="Erro de Runtime", description="Comando não executado: "+ex.Message + " em \n " +ex.StackTrace});
 	}
 });
+// rota mais barata - melhor rota
 app.MapGet("/routes/bestprice/{origin}/{destiny}", ([FromRoute] string origin, [FromRoute] string destiny) => {
 	try{
 		return returnResults( RE_Route.Bestprice(builder.Configuration, origin,destiny));
