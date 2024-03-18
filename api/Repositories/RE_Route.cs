@@ -10,7 +10,6 @@ namespace Repositories{
         public static EN_Return Bestprice(IConfiguration config,string? origin=null,string? destiny=null){
             Dictionary<string,decimal> routes_dic = BP_Route.Bestprice(config,origin,destiny);
             EN_Return return_en = new EN_Return{code=0, tittle="sucesso na busca de rotas mais baratas", description="Rota mais barata pesquisada com sucesso"}; 
-
             return_en.dataList = routes_dic.Select(rt => new { route = rt.Key, price = rt.Value });
             return return_en;
         }

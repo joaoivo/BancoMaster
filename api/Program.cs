@@ -75,7 +75,7 @@ app.MapPut("/routes/{guid}/{origin}/{destiny}/{value}", ([FromRoute] Guid guid,[
 	}
 });
 //delete
-app.MapDelete("/routes/delete/{guid}", ([FromRoute] Guid guid) => {
+app.MapDelete("/routes/{guid}", ([FromRoute] Guid guid) => {
 	//"Excluir rotas de "+guid
 	try{
 		return returnResults( RE_Route.Delete(builder.Configuration,guid));
