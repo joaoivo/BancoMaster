@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["Database:Default"]);
 var app = builder.Build();
 
-
 IResult returnResults(EN_Return result_en, string operation=""){
 	
 	if(result_en==null){

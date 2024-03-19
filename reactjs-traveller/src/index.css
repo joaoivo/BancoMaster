@@ -5,6 +5,13 @@
 }
 body{
 	font-family: sans-serif;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
 }
 .app{
 	display: flex;
@@ -12,4 +19,47 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+input{
+	border: 0px;
+	border-radius: 4px;
+	padding: 0px 8px;
+	height: 36px;
+	margin: 8px;
+	background-color: #cc001322;
+	transition: all 1s ease-out;
+}
+input:hover{
+	
+	transition: all 1s ease-out;
+	background-color: #cc001355;
+}
+div.formLineDiv{
+	margin: 8px;
+
+	border: 1px solid #cc001344;
+	border-radius: 4px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	
+	background-color: #99666644;
+}
+
+button{
+	height: 36px;
+	border: 0px;
+	border-radius: 4px;
+	background-color: #3366ff99;
+	color: #fff;
+	font-size: 18px;
+	padding: 6px;
+	transition: all 1s ease-out;
+}
+button:hover{
+	background-color: #3366ff44;
+	color: #444;
+	transition: all 1s ease-out;
 }

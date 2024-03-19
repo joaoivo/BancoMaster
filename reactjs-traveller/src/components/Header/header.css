@@ -5,6 +5,9 @@ header.main{
 	width: 100vw;
 	height: 60px;
 	background-color: #4c6edb;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 a{
 	text-decoration: none;

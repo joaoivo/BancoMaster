@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YPBEzvT87naGidtX7If4JU8pDkO3/niHjYoF544tG0W0PGuoiIJf+tBakx6JHUj63SluC1CFye136nhNX8qmQg==",
+  "dgSpecHash": "bjzC5FaSHoQGAf++M5mSGOQYOTkJw3Cxa1pYM4SdjU6cbKVDORlaP75OD5DHOlAaNP85ZyQIXsI4PHik5wM9UQ==",
   "success": true,
-  "projectFilePath": "D:\\Proj\\96-Public\\Tests\\c#\\202403BancoMaster\\api\\api.csproj",
+  "projectFilePath": "D:\\Proj\\96-Public\\Tests\\cSharp\\202403BancoMaster\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao.ivo\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\joao.ivo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
