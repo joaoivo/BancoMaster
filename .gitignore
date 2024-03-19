@@ -54,3 +54,6 @@ dkms.conf
 /api/obj
 /api/obj
 /api/obj
+api/obj/Debug/net6.0/api.AssemblyInfo.cs
+api/obj/Debug/net6.0/api.AssemblyInfoInputs.cache
+/api/obj
