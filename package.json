@@ -1,0 +1,14 @@
+{
+  "name": "202403bancomaster",
+  "version": "1.0.0",
+  "description": "Sistema de teste de rotas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "teste"
+  ],
+  "author": "João Ivo",
+  "license": "ISC"
+}

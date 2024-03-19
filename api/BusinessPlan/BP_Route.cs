@@ -20,7 +20,7 @@ namespace BusinessPlan{
 			return dicReturn ;
 		}
 		public static Dictionary<string,decimal> searchBestRoutes(Dictionary<string,decimal> dicRoutes,List<EN_Route> routes_lst,string destiny,int loopingRecursiveCount=0){
-			const int CNT_ROUTES_POINTCOUNTMAX = 6; 			
+			const int CNT_ROUTES_POINTCOUNTMAX = 6;
 			const int CNT_RECURSIVE_LOOPINGCOUNTMAX = 10; 
 
 			loopingRecursiveCount++;

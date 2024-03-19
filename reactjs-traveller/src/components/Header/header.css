@@ -1,0 +1,15 @@
+header.main{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100vw;
+	height: 60px;
+	background-color: #4c6edb;
+}
+a{
+	text-decoration: none;
+	font-size: 24px;
+	cursor: pointer;
+	color: #ffffffdd;
+	font-weight: bold;
+}
