@@ -46,6 +46,12 @@ div.formLineDiv{
 	justify-content: space-around;
 	
 	background-color: #99666644;
+	transition: all 2s ease-out;
+}
+div.formLineDiv:hover{
+	border-color: #e2848e25;
+	background-color: #fcc3c3a6;
+	transition: all 1s ease-out;
 }
 
 button{
@@ -62,4 +68,19 @@ button:hover{
 	background-color: #3366ff44;
 	color: #444;
 	transition: all 1s ease-out;
+}
+.icons{
+	color:#4c6ddbce;
+	transition: all 1s ease-out;
+	size: 16px;
+}
+.iconButton{
+	color:#4c6edb;
+	cursor: pointer;
+	transition: all 1s ease-out;
+}
+.iconButton:hover{
+	color: #060649;
+	transition: all 2s ease-out;
+	size:20px;
 }

@@ -1,27 +1,29 @@
 import {useState } from 'react';
+import { FaLongArrowAltRight,FaDotCircle,FaDollarSign } from "react-icons/fa";
+import { MdEditSquare } from "react-icons/md";
 import api from '../../services/api'
 
 export default function Register(){
-	///app.MapGet("/routes/Advanced/", ([FromQuery] Guid? guid,[FromQuery] string? origin, [FromQuery] string? destiny, [FromQuery] decimal? value) =>{
 
-	const [origin,setStateOrigin] = useState('');
-	const [destiny,setStateDestiny] = useState('');
-	const [dataList,setStateDataList] = useState([]);
+	const [origin	,setStateOrigin	] = useState('');
+	const [destiny	,setStateDestiny	] = useState('');
+	const [dataList,setStateDataList	] = useState([]);
+
 	async function searchRoutes(){
+		console.clear();
 		var apiUrlParameters=[];
-		console.log(origin);
-		if(origin){apiUrlParameters["origin"]=origin;}
-		if(destiny){apiUrlParameters["destiny"]=destiny;}
-		console.log(apiUrlParameters);
+		if(origin){apiUrlParameters.push("origin="+origin);}
+		if(destiny){apiUrlParameters.push("destiny="+destiny);}
 		var apiUrl="/routes/Advanced/";
-		console.log(apiUrlParameters.map((value,key)=>{console.log(key);return `${key}:${value}`}));
-		if(apiUrlParameters){apiUrl+="?"+(apiUrlParameters.map((value,key)=>{return `${key}:${value}`}).join("&"));}
+		if(apiUrlParameters){apiUrl+="?"+(apiUrlParameters.join("&"));}
 
-		console.log(apiUrl);
 		const response = await api.get(apiUrl);
 		if(!response){return;}
-		console.log(response.data.dataList);
 		setStateDataList(response.data.dataList);
+	}
+
+	const editRoutes = (guid)=>{
+		alert("bom");
 	}
 	return(
 		<div>
@@ -37,10 +39,14 @@ export default function Register(){
 						dataList &&
 						dataList.map((rt, idx)=>{
 							return(
-								<div className='formLineDiv' id={rt.rtsGuid}>
-									<label>Origem: <span>{rt.rtsOrigin}</span></label>
-									<label>Destino: <span>{rt.rtsDestintion}</span></label>
-									<label>Preço: <span>{rt.rtsPrice}</span></label>
+								<div className='formLineDiv'  key={`div_${rt.rtsGuid}`}>
+									<FaDotCircle className='icons'/>
+									<label><span>{rt.rtsOrigin}</span></label>
+									<FaLongArrowAltRight className='icons'/>
+									<label><span>{rt.rtsDestintion}</span></label>
+									<FaDollarSign className='icons'/>
+									<label> <span>{rt.rtsPrice}</span></label>
+									<MdEditSquare className='iconButton' onClick={editRoutes}/>
 								</div>
 							)
 						})
