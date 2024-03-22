@@ -37,6 +37,7 @@ input:hover{
 }
 div.formLineDiv{
 	margin: 8px;
+	padding: 4px;;
 
 	border: 1px solid #cc001344;
 	border-radius: 4px;
@@ -63,6 +64,7 @@ button{
 	font-size: 18px;
 	padding: 6px;
 	transition: all 1s ease-out;
+
 }
 button:hover{
 	background-color: #3366ff44;
@@ -73,6 +75,7 @@ button:hover{
 	color:#4c6ddbce;
 	transition: all 1s ease-out;
 	size: 16px;
+	margin: 4px;
 }
 .iconButton{
 	color:#4c6edb;

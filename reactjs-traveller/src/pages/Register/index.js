@@ -1,5 +1,5 @@
 import {useState } from 'react';
-import { FaLongArrowAltRight,FaDotCircle,FaDollarSign } from "react-icons/fa";
+import { FaLongArrowAltRight,FaDotCircle,FaDollarSign, FaAmazonPay } from "react-icons/fa";
 import { MdEditSquare } from "react-icons/md";
 import api from '../../services/api'
 
@@ -22,9 +22,6 @@ export default function Register(){
 		setStateDataList(response.data.dataList);
 	}
 
-	const editRoutes = (guid)=>{
-		alert("bom");
-	}
 	return(
 		<div>
 			<h1>Cadastro e Consulta de Rotas</h1>
@@ -46,7 +43,7 @@ export default function Register(){
 									<label><span>{rt.rtsDestintion}</span></label>
 									<FaDollarSign className='icons'/>
 									<label> <span>{rt.rtsPrice}</span></label>
-									<MdEditSquare className='iconButton' onClick={editRoutes}/>
+									<MdEditSquare className='iconButton' onClick={() => window.location.href =('/route/'+rt.rtsGuid)}/>
 								</div>
 							)
 						})
