@@ -59,3 +59,5 @@ api/obj/Debug/net6.0/api.AssemblyInfoInputs.cache
 /api/obj
 *.cache
 /api/obj
+api/obj/Debug/net6.0/api.AssemblyInfoInputs.cache
+api/obj/Debug/net6.0/api.AssemblyInfo.cs
