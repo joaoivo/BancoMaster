@@ -21,6 +21,7 @@ export default function RoutesApp(){
 				<Route path='/BestPrices' element={<BestPrices/>} />
 				<Route path='/Register' element={<Register/>} />
 				<Route path='/Route/:id' element={<RouteData/>} />
+				<Route path='/Route/' element={<RouteData/>} />
 
 				<Route path='/Error' element={<Error/>} />
 				<Route path='*' element={<NotFound/>} />

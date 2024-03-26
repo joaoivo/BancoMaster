@@ -49,6 +49,21 @@ div.formLineDiv{
 	background-color: #99666644;
 	transition: all 2s ease-out;
 }
+div.formLineDiMessage{
+
+	margin: 8px;
+	padding: 4px;;
+
+	border: 1px solid #cc001344;
+	border-radius: 4px;
+	
+	background-color: #99666644;
+	transition: all 2s ease-out;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 div.formLineDiv:hover{
 	border-color: #e2848e25;
 	background-color: #fcc3c3a6;
