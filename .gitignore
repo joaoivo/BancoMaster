@@ -41,6 +41,7 @@
 *.su
 *.idb
 *.pdb
+*.cache
 
 # Kernel Module Compile Results
 *.mod*
@@ -50,14 +51,22 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+api/obj
+api/obj/
+/api/obj/
 /api/obj
 /api/obj
-/api/obj
-/api/obj
+
+api/bin
+api/bin/
+/api/bin/
+/api/bin
+/api/bin
+
 api/obj/Debug/net6.0/api.AssemblyInfo.cs
 api/obj/Debug/net6.0/api.AssemblyInfoInputs.cache
-/api/obj
+
 *.cache
-/api/obj
 api/obj/Debug/net6.0/api.AssemblyInfoInputs.cache
 api/obj/Debug/net6.0/api.AssemblyInfo.cs
+api/obj/Debug/net6.0/api.csproj.FileListAbsolute.txt

@@ -3,14 +3,13 @@ using Repositories;
 using Entities;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["Database:Default"]);
+builder.Services.AddSqlServer<myApplicationDbContext>(builder.Configuration["Database:Default"]);
 // Adicione o CORS no ConfigureServices
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(builder =>
-    {
+builder.Services.AddCors(options =>{
+    options.AddDefaultPolicy(builder =>    {
         builder.AllowAnyOrigin()
                .AllowAnyMethod()
                .AllowAnyHeader();
@@ -99,5 +98,10 @@ app.MapDelete("/routes/{guid}", ([FromRoute] Guid guid) => {
 	}
 } );
 
-app.Run();
 
+app.Run();
+public class myApplicationDbContext: DbContext{
+	//classe construtora 
+	public myApplicationDbContext(DbContextOptions<myApplicationDbContext> options):base(options){}
+	public DbSet<EN_Route>? routes {get; set;}
+};
